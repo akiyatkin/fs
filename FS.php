@@ -1,5 +1,5 @@
 <?php
-namespace akiyatkin\boo;
+namespace akiyatkin\fs;
 use infrajs\path\Path;
 use infrajs\load\Load;
 
