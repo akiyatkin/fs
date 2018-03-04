@@ -46,6 +46,7 @@ class FS
         //$data = Load::loadJSON($file); Нельзя использовать после вывода контента из-за проверки заголовков
         $data = file_get_contents($src);
         $data = Load::json_decode($data);
+        if (is_null($data)) $data = array();
         return $data;
     }
     public static function filesize($file) {
