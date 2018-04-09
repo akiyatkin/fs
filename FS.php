@@ -45,7 +45,7 @@ class FS
         if (!is_file($src)) return array();
         //$data = Load::loadJSON($file); Нельзя использовать после вывода контента из-за проверки заголовков
         $data = file_get_contents($src);
-        $data = Load::json_decode($data);
+        $data = Load::json_decode($data,true);
         if (is_null($data)) $data = array();
         return $data;
     }
