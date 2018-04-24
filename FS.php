@@ -6,11 +6,11 @@ use infrajs\load\Load;
 class FS
 {
     public static function is_dir($dir) {
-        $dir = Path::toutf($dir);
+        $dir = Path::theme($dir);
         return is_dir($dir);
     }
     public static function is_file($dir) {
-        $dir = Path::toutf($dir);
+        $dir = Path::theme($dir);
         return is_file($dir);
     }
     public static function filemtime($file) {
