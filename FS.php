@@ -35,6 +35,21 @@ class FS
         }
         return $list;
     }
+    public static function rename($old, $new) {
+        $old = Path::theme($old);
+        if (!$old) return;
+        $new = Path::resolve($new);
+        $r = explode('/',$new);
+        $f = array_pop($r);//Достали файл
+        if(!$f) array_pop($r); //Если файла нет то и папку достали
+        $dir = '';
+        foreach ($r as $f) {
+            $dir .= $f.'/';
+            FS::mkdir($dir);
+        }
+        
+        return rename($old, $new);
+    }
     public static function file_put_json($file, $data) {
         $data = Load::json_encode($data);
         $file = Path::resolve($file);
